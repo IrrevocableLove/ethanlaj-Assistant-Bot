@@ -14,6 +14,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("cbrotimead", "Sends a computer friendly version of the Bro Time ad")
   .addField("typeon", "Starts typing in the current channel")
   .addField("typeoff", "Stops typing in the current channel")
+  .addField("memberpfp", "Sends a link to a user's profile picture")
   .addField("formatad", "Formats an partner message");
 
 

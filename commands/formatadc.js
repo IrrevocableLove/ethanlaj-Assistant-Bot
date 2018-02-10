@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
    const ad = await awaitReply(message, "Ad?", 180000);
    const image = await awaitReply(message, "Thumbnail?", 180000);
 
-   message.channel.send(`.custom edit eaa 1 embed:title:"${title}",description:"${ad}",\ncolor:"orange",thumbnail:"${image}"`)
+   message.channel.send(````.custom edit eaa 1 embed:title:"${title}",description:"${ad}",\ncolor:"orange",thumbnail:"${image}"````)
 }
 module.exports.help = {
       name: "formatadc"

@@ -1,8 +1,6 @@
 module.exports.run = async (bot, message, args) => {
-let userid = message.author.id
-let required = "245877990938902529"
 if (userid!==required) {
-      console.log("no")
+      return message.channel.send("You're not authorized!");
 }
 const title = await bot.awaitReply(message, "Title?", 180000);
 const ad = await bot.awaitReply(message, "Ad?", 180000);

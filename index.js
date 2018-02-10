@@ -44,7 +44,7 @@ if(message.author.id === "245877990938902529") return commandfile.run(bot, messa
 })
 
  bot.awaitReply = async (msg, question, limit = 60000) => {
-    const filter = m=>"245877990938902529" = msg.author.id;
+    const filter = m=>m.author.id = "245877990938902529"
     await msg.channel.send(question);
     try {
       const collected = await msg.channel.awaitMessages(filter, { max: 1, time: limit, errors: ['time'] });

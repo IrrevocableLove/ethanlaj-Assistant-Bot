@@ -42,5 +42,5 @@ if(message.author.id === "245877990938902529") return commandfile.run(bot, messa
 
 })
 
-"start": startup",
+
 bot.login(botconfig.token);

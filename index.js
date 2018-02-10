@@ -40,7 +40,9 @@ if(!message.content.startsWith(botconfig.prefix)) return;
 let commandfile = bot.commands.get(cmd.slice(prefix.length));
 if(message.author.id === "245877990938902529") return commandfile.run(bot, message, args);
 
-  bot.awaitReply = async (msg, question, limit = 60000) => {
+  
+})
+ bot.awaitReply = async (msg, question, limit = 60000) => {
     const filter = m=>m.author.id = msg.author.id;
     await msg.channel.send(question);
     try {
@@ -50,7 +52,6 @@ if(message.author.id === "245877990938902529") return commandfile.run(bot, messa
       return false;
     }
   };
-})
 
 
 bot.login(botconfig.token);

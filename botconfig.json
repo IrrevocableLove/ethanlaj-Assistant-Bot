@@ -1,4 +1,4 @@
 {
-  "token": "Process.env.tokenboi",
+  "token": "process.env.tokenboi",
   "prefix": ">"
 }

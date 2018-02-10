@@ -1,10 +1,11 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (bot, message, args) => {
 message.channel.send("Title?")
-let title = await client.awaitMessages()
+let ad = message.channel.awaitMessages()
 message.channel.send("Ad?")
-let ad = await client.awaitMessages()
+let ad = message.channel.awaitMessages()
+
 
 message.channel.send(`${title}, ${ad}`)
 

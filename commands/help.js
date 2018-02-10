@@ -10,13 +10,14 @@ module.exports.run = async (bot, message, args) => {
   .addField("serverid", "Displays the servers ID")
   .addField("inviteinfo", "Displays information about an invite")
   .addField("servericon", "Sends a link to a server's current thumbnail")
+  .addField("mbrotimead", "Sends a mobile friendly version of the Bro Time ad")
+  .addField("cbrotimead", "Sends a computer friendly version of the Bro Time ad")
   .addField("typeon", "Starts typing in the current channel")
   .addField("typeoff", "Stops typing in the current channel");
 
 
   message.react("\u2705")
   message.author.send(helper)
-  message.channel.send(`${message.author}, Check your DMs! \uD83D\uDCEC`)
 }
 module.exports.help = {
     name: "help"

@@ -4,8 +4,10 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.cooldown = false;
 bot.wowdown = false;
+bot.afk = false;
+bot.afkmsg = "ethanlaj is AFK"
+bot.gtc = true;
 bot.commands = new Discord.Collection();
-
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -32,11 +34,20 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
+let ethanlaj = bot.fetchUser("245877990938902529")
+
   if(bot.cooldown) {
 message.delete()
 }
 if((bot.wowdown) && (message.author.id !== "245877990938902529")){
 message.delete()
+}
+if((bot.afk) && (message.isMemberMentioned(ethanlaj))){
+message.channel.send(afkmsg)
+}
+if(bot.gtc) {
+  message.channel.send("<@289380085025472523>")
+
 }
 
   let prefix = botconfig.prefix;

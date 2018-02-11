@@ -6,7 +6,7 @@ bot.cooldown = false;
 bot.wowdown = false;
 bot.afk = false;
 bot.afkmsg = "ethanlaj is AFK"
-bot.gtc = true;
+bot.gtc = false;
 bot.commands = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {

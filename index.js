@@ -34,7 +34,7 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
-let ethanlaj = bot.fetchUser("245877990938902529")
+//let ethanlaj = bot.fetchUser("245877990938902529")
 
   if(bot.cooldown) {
 message.delete()
@@ -42,8 +42,8 @@ message.delete()
 if((bot.wowdown) && (message.author.id !== "245877990938902529")){
 message.delete()
 }
-if((bot.afk) && (message.isMemberMentioned(ethanlaj))){
-message.channel.send(afkmsg)
+if((bot.afk) && (message.isMentioned("245877990938902529") === true)){
+message.channel.send(bot.afkmsg)
 }
 if(bot.gtc) {
   message.channel.send("<@289380085025472523>")

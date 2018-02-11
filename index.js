@@ -2,11 +2,11 @@ const botconfig = require("./botconfig.js");
 const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
-bot.cooldown = false;
 bot.wowdown = false;
 bot.afk = false;
 bot.afkmsg = "ethanlaj is AFK"
 bot.gtc = false;
+bot.delchannel = "None"
 bot.commands = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
@@ -36,10 +36,8 @@ bot.on("message", async message => {
 
 //let ethanlaj = bot.fetchUser("245877990938902529")
 
-  if(bot.cooldown) {
-message.delete()
-}
-if((bot.wowdown) && (message.author.id !== "245877990938902529")){
+ 
+if((bot.wowdown) && (message.channel.id === bot.delchannel) && (message.author.id !== "245877990938902529")){
 message.delete()
 }
 if((bot.afk) && (message.isMentioned("245877990938902529") === true)){

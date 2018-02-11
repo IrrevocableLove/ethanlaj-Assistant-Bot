@@ -2,6 +2,8 @@ const botconfig = require("./botconfig.js");
 const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
+bot.cooldown = false;
+bot.wowdown = false;
 bot.commands = new Discord.Collection();
 
 
@@ -30,6 +32,12 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
+  if(bot.cooldown) {
+message.delete()
+}
+if((bot.wowdown) && (message.author.id !== "245877990938902529")){
+message.delete()
+}
 
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
@@ -41,9 +49,11 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
 if(message.author.id === "245877990938902529") return commandfile.run(bot, message, args);
 
 
+
+
 })
 
- 
+
 
 
 bot.login(botconfig.token);

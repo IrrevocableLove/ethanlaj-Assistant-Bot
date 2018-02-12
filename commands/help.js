@@ -16,7 +16,9 @@ module.exports.run = async (bot, message, args) => {
   .addField("typeoff", "Stops typing in the current channel")
   .addField("memberpfp", "Sends a link to a user's profile picture")
   .addField("formatad", "Formats an partner message")
-  .addField("delete", "Enables/disables deletion of all messages");
+  .addField("delete", "Enables/disables deletion of all messages in a channel")
+  .addField("pingmsg", "Changes/enables/disables message sent when you are pinged");
+
 
 
 

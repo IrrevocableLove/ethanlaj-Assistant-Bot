@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
   message.react(":offswitch:412046076988882944")
   } else {
   client.afk = true
-  client.afkmsg = `**ethanlaj's:** ${afkstat}`
+  client.afkmsg = `**ethanlaj:** ${afkstat}`
   message.react(":onswitch:412046075105640448")
   }
 
